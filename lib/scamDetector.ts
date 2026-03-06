@@ -238,10 +238,10 @@ class ScamDetector {
   }
 
   analyzeMessage(message: string): {
-    result: 'verified_safe' | 'likely_safe' | 'neutral' | 'needs_verification' | 'exercise_caution' | 'high_risk' | 'confirmed_scam' | 'potential_fraud' | 'dangerous'
+    result: 'safe' | 'suspicious' | 'scam'
     riskLevel: number
     matchedKeywords: string[]
-    analysis: { description: string; precautions: string[] }
+    analysis: { description: string }
   } {
     if (!this.isTrained) {
       throw new Error('Model not trained yet')
